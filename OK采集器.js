@@ -1,4 +1,4 @@
-const __version=="1.0v"
+const __version="1.0v"
 
 var url = "http://www.okzy.co/index.php?m=vod-search";
 var dz = new Array();
