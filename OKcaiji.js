@@ -1,5 +1,7 @@
 const __version="1.2v"
 
+chenkUpdate()
+
 var url = "http://www.okzy.co/index.php?m=vod-search";
 var dz = new Array();
 var type = new Array();
@@ -190,4 +192,36 @@ function clearArr(){
   dz.length=0
   type.length=0
   title.length=0
+}
+
+function chenkUpdate() {
+  $http.get({
+    url: "https://raw.githubusercontent.com/ouyuyu/mybox/master/OKcaiji.js",
+    handler: function(resp) {
+      var data = resp.data;
+      var cloudVersion = data.match(/__version="(.*?)v"/)[1];
+      if (__version < cloudVersion) {
+        $ui.alert({
+          title: "检测到新版本",
+          message: cloudVersion + "v",
+          actions: [
+            {
+              title: "更新",
+              handler: () => {
+                $app.openURL(
+                  encodeURI(
+                    "jsbox://import?name=OK采集器1&url=https://raw.githubusercontent.com/ouyuyu/mybox/master/OKcaiji.js&icon=icon_055.png"
+                  )
+                );
+                $app.close();
+              }
+            },
+            {
+              title: "不了"
+            }
+          ]
+        });
+      }
+    }
+  });
 }
