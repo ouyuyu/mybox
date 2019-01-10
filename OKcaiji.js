@@ -210,7 +210,7 @@ function chenkUpdate() {
               handler: () => {
                 $app.openURL(
                   encodeURI(
-                    "jsbox://import?name=OK采集器1&url=https://raw.githubusercontent.com/ouyuyu/mybox/master/OKcaiji.js&icon=icon_055.png"
+                    "jsbox://import?name=OK采集器&url=https://raw.githubusercontent.com/ouyuyu/mybox/master/OKcaiji.js&icon=icon_055.png"
                   )
                 );
                 $app.close();
