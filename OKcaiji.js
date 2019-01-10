@@ -1,4 +1,4 @@
-const __version="1.1v"
+const __version="1.2v"
 
 var url = "http://www.okzy.co/index.php?m=vod-search";
 var dz = new Array();
@@ -139,6 +139,23 @@ function geturl(wz,name) {
                 events: {}
               },
               {
+                type:"button",
+                props: {
+                 title:"获取播放链接" 
+                },
+                layout: function(make, view) {
+                 make.size.equalTo($size(150,30))
+                 make.right.inset(20)
+                 make.bottom.inset(160)
+                },
+                events: {
+                 tapped:function(sender){
+                   $clipboard.text=t[idx]
+                   $ui.toast('已复制')
+                 } 
+                }
+              },
+              {
                 type: "label",
                 props: {
                   text:js,
@@ -148,6 +165,17 @@ function geturl(wz,name) {
                 layout: function(make, view) {
                  make.left.right.bottom.inset(20)
                  make.height.equalTo(160)
+                }
+              },
+              {
+                type:"label",
+                props:{
+                  text:"By 欧阳先森",
+                  textColor:$color("gray")
+                },
+                layout: function(make, view) {
+                 make.size.equalTo($size(120,20))
+                 make.right.bottom.inset(10) 
                 }
               }
             ]
