@@ -1,4 +1,4 @@
-const __version="1.0v"
+const __version="1.1v"
 
 chenkUpdate()
 
@@ -138,7 +138,7 @@ function clearAll(){
 
 function chenkUpdate() {
   $http.get({
-    url: "https://raw.githubusercontent.com/ouyuyu/mybox/master/OKcaiji.js",
+    url: "https://raw.githubusercontent.com/ouyuyu/mybox/master/zhongzisou.js",
     handler: function(resp) {
       var data = resp.data;
       var cloudVersion = data.match(/__version="(.*?)v"/)[1];
@@ -152,7 +152,7 @@ function chenkUpdate() {
               handler: () => {
                 $app.openURL(
                   encodeURI(
-                    "jsbox://import?name=种子搜&url=https://raw.githubusercontent.com/ouyuyu/mybox/master/OKcaiji.js&icon=icon_055.png"
+                    "jsbox://import?name=种子搜&url=https://raw.githubusercontent.com/ouyuyu/mybox/master/zhongzisou.js&icon=icon_055.png"
                   )
                 );
                 $app.close();
